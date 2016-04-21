@@ -5,11 +5,14 @@ import org.stjs.bridge.react.internal.Props;
 import org.stjs.bridge.react.internal.ReactClassInterface;
 import org.stjs.bridge.react.internal.State;
 import org.stjs.bridge.react.redux.type.ConnectFunction;
+import org.stjs.bridge.react.redux.type.DispatchToProps;
+import org.stjs.bridge.react.redux.type.DispatchToPropsWithOwnPropsFunction;
 import org.stjs.bridge.react.redux.type.StateToPropsFunction;
 import org.stjs.bridge.react.redux.type.StateToPropsWithOwnPropsFunction;
 import org.stjs.bridge.redux.api.Action;
 import org.stjs.javascript.annotation.STJSBridge;
 import org.stjs.javascript.functions.Callback1;
+import org.stjs.javascript.functions.Function0;
 import org.stjs.javascript.functions.Function1;
 import org.stjs.javascript.functions.Function2;
 
@@ -56,12 +59,11 @@ public final class ReactRedux {
 	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(StateToPropsWithOwnPropsFunction<?, P> mapStateToProps);
 
 	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(StateToPropsFunction<?, P> mapStateToProps,
-			Function2 mapDispatchToProps);
+			DispatchToProps<P, ?> mapDispatchToProps);
 
-	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(Function2<?, P, P> mapStateToProps,
-			Function1<Callback1<Action>, P> mapDispatchToProps);
+	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(StateToPropsWithOwnPropsFunction<?, P> mapStateToProps,
+			DispatchToProps<P, ?> mapDispatchToProps);
 
-	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(Function2<?, P, P> mapStateToProps,
-			Function2<Callback1<Action>, P, P> mapDispatchToProps);
-
+	public static native <T extends ReactClassInterface, P extends Props> ConnectFunction<T> connect(StateToPropsWithOwnPropsFunction<?, P> mapStateToProps,
+			DispatchToPropsWithOwnPropsFunction<P, ?> mapDispatchToProps);
 }

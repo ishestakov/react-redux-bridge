@@ -7,5 +7,5 @@ import org.stjs.javascript.functions.Function1;
 
 @STJSBridge
 @FunctionalInterface
-public interface DispatchToProps<P extends Props> extends Function1<Function1<Action, Object>, P> {
+public interface DispatchToProps<P extends Props, R> extends Function1<Function1<Action, R>, P> {
 }
