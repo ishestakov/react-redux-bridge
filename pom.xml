@@ -6,7 +6,7 @@
 
 	<groupId>org.st-js.bridge</groupId>
 	<artifactId>react-redux</artifactId>
-	<version>4.4.5.bv1-SNAPSHOT</version>
+	<version>${upstream.version}.bv1-SNAPSHOT</version>
 
 	<parent>
 		<groupId>org.st-js.bridge</groupId>
@@ -15,6 +15,7 @@
 	</parent>
 
 	<properties>
+		<upstream.version>4.4.5</upstream.version>
 		<stjs.version>3.2.2</stjs.version>
 		<react.version>0.14.7.bv1</react.version>
 		<redux.version>3.4.0.bv1-SNAPSHOT</redux.version>
@@ -41,6 +42,11 @@
 			<artifactId>test-helper</artifactId>
 			<version>${stjs.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>react-redux</artifactId>
+			<version>${upstream.version}</version>
 		</dependency>
 	</dependencies>
 

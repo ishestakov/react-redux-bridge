@@ -16,7 +16,7 @@ import org.stjs.javascript.functions.Function0;
 import org.stjs.javascript.functions.Function1;
 import org.stjs.javascript.functions.Function2;
 
-@STJSBridge(sources = "react-redux.min.js")
+@STJSBridge(sources = "webjar:/react-redux.min.js")
 public final class ReactRedux {
 	public static Class<Component<ProviderProps, State>> Provider;
 
